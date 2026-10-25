@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Saga of Twenty ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#2a1b4d; --plum:#4b2a7b; --rose:#f7c6d9; --blush:#fff1f6;
+  --gold:#e8b84a; --lav:#cdb8f0; --sea:#5cc8c0; --pink:#e8498a;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Nunito',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--blush);color:var(--night);line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);line-height:1.05}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;padding:5rem 1.25rem 7rem;
+  background:radial-gradient(ellipse at 50% 0%,#7a4bb8 0%,var(--plum) 40%,var(--night) 100%);color:#fff;overflow:hidden}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.7;animation:tw 3s infinite ease-in-out}
+@keyframes tw{50%{opacity:.1;transform:scale(.5)}}
+.arch{width:min(240px,62vw);aspect-ratio:3/4;margin:0 auto 1.8rem;border-radius:999px 999px 18px 18px;overflow:hidden;
+  border:4px solid var(--gold);box-shadow:0 0 0 8px rgba(232,184,74,.2),0 20px 60px rgba(0,0,0,.4);position:relative;z-index:2;animation:rise 1.4s cubic-bezier(.2,.8,.2,1) both}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}}
+.hero h1{font-size:clamp(3rem,11vw,7.5rem);font-style:italic;font-weight:700;position:relative;z-index:2;
+  background:linear-gradient(90deg,#ffe9a8,#f7c6d9,#cdb8f0,#ffe9a8);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% 0}}
+.hero p.sub{font-family:var(--serif);font-size:clamp(1.2rem,3.6vw,1.8rem);font-style:italic;color:var(--rose);margin-top:.8rem;position:relative;z-index:2}
+.btn{display:inline-block;margin-top:2rem;padding:.9rem 2.2rem;border:0;border-radius:999px;font:700 1.05rem var(--sans);cursor:pointer;
+  background:linear-gradient(135deg,var(--gold),#ffd987);color:var(--night);box-shadow:0 8px 24px rgba(232,184,74,.4);text-decoration:none;position:relative;z-index:2;transition:transform .2s}
+.btn:hover{transform:translateY(-3px) scale(1.04)}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:90px;z-index:1}
+.waves path{animation:sway 8s ease-in-out infinite alternate}
+.waves path:nth-child(2){animation-duration:11s;animation-direction:alternate-reverse}
+@keyframes sway{to{transform:translateX(-60px)}}
+
+/* SECTIONS */
+section{padding:5rem 1.25rem;max-width:1050px;margin:0 auto}
+.title{text-align:center;margin-bottom:3rem}
+.title h2{font-size:clamp(2.2rem,6vw,3.6rem);font-style:italic;color:var(--plum)}
+.title p{font-family:var(--serif);font-size:1.3rem;font-style:italic;color:var(--pink)}
+
+/* SAGAS */
+.sagas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.saga{background:#fff;border-radius:28px 28px 28px 6px;padding:1.8rem;border:2px solid var(--rose);position:relative;transition:transform .25s,box-shadow .25s}
+.saga:nth-child(even){border-radius:28px 28px 6px 28px;border-color:var(--lav)}
+.saga:hover{transform:rotate(-1.2deg) translateY(-4px);box-shadow:0 14px 34px rgba(75,42,123,.18)}
+.saga .em{font-size:2rem}
+.saga h3{font-size:1.9rem;color:var(--plum);margin:.3rem 0 .4rem}
+.saga p{font-size:.98rem}
+
+/* GALLERY */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;align-items:start}
+.gal figure{background:#fff;padding:.7rem .7rem 1rem;border-radius:6px;box-shadow:0 10px 28px rgba(75,42,123,.2);transition:transform .3s}
+.gal figure:nth-child(odd){transform:rotate(-2.5deg)}
+.gal figure:nth-child(even){transform:rotate(2deg) translateY(14px)}
+.gal figure:hover{transform:rotate(0) scale(1.05);z-index:2}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;display:block}
+.gal figcaption{font-family:var(--serif);font-style:italic;font-size:1.2rem;text-align:center;margin-top:.5rem;color:var(--plum)}
+
+/* WHEEL OF WISDOM QUOTES */
+.athena{background:linear-gradient(160deg,var(--night),var(--plum));color:#fff;border-radius:40px;text-align:center;max-width:900px;padding:3.5rem 1.5rem}
+.athena h2{font-size:clamp(2rem,5vw,3rem);font-style:italic;color:var(--rose)}
+.athena #wish{font-family:var(--serif);font-size:clamp(1.4rem,4vw,2.1rem);font-style:italic;min-height:7rem;display:grid;place-items:center;margin:1.5rem auto;max-width:640px;transition:opacity .3s}
+
+/* LETTER */
+.letter{background:#fff;border:2px dashed var(--pink);border-radius:30px;padding:2.5rem 1.8rem;max-width:720px;text-align:center}
+.letter .body{max-height:0;overflow:hidden;transition:max-height 1s ease;text-align:left}
+.letter.open .body{max-height:1400px}
+.letter p{margin:1rem 0;font-size:1.05rem}
+.letter .sig{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--pink);text-align:right}
+
+footer{text-align:center;padding:3rem 1rem 4rem;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--plum)}
+
+/* petals */
+.petal{position:fixed;top:-30px;z-index:50;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:60}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stars" id="stars"></div>
+  <div>
+    <div class="arch"><img src="images/1.png" alt="Birthday girl smiling in a blue shirt"></div>
+    <h1>Twenty!</h1>
+    <p class="sub">Happy birthday, <span class="name">Shivani</span> 🌸 the saga of you gets a new chapter</p>
+    <a class="btn" href="#sagas">Begin the saga ⚔️</a>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#cdb8f0" fill-opacity=".6" d="M-100 40 Q 100 0 300 40 T 700 40 T 1100 40 T 1540 40 V90 H-100Z"/>
+    <path fill="#fff1f6" d="M-100 60 Q 100 30 300 60 T 700 60 T 1100 60 T 1540 60 V90 H-100Z"/>
+  </svg>
+</header>
+
+<section id="sagas">
+  <div class="title"><h2>The Sagas of <span class="name">Shivani</span></h2><p>why you’re the best kind of friend</p></div>
+  <div class="sagas">
+    <div class="saga"><div class="em">🐴</div><h3>The Troy Saga</h3><p>You’re the one with the plan. When everything is chaos, you find the clever way through and somehow make it look easy.</p></div>
+    <div class="saga"><div class="em">🌊</div><h3>The Ocean Saga</h3><p>Loyal like the tide. No matter how far things drift, you always come back, and you make people feel like they matter.</p></div>
+    <div class="saga"><div class="em">🌷</div><h3>The Circe Saga</h3><p>You make every room softer and a little more magical. Your laugh alone could turn a boring day around.</p></div>
+    <div class="saga"><div class="em">🦋</div><h3>The Underworld Saga</h3><p>You show up on the hard days. You listen properly, you don’t flinch, and you never make anyone feel small.</p></div>
+    <div class="saga"><div class="em">🦉</div><h3>The Wisdom Saga</h3><p>A warrior of the mind. Sharp, funny, curious, and always thinking three steps ahead (and still making time for snacks).</p></div>
+    <div class="saga"><div class="em">🏡</div><h3>The Ithaca Saga</h3><p>Home. Being around you feels like coming home, and that’s the rarest thing a friend can give.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="title"><h2>Memory Lane</h2><p>from tiny hero to twenty</p></div>
+  <div class="gal">
+    <figure><img src="images/3.png" alt="Childhood school photo"><figcaption>Where it began 🎀</figcaption></figure>
+    <figure><img src="images/4.png" alt="Smiling with wavy hair"><figcaption>Pure main character</figcaption></figure>
+    <figure><img src="images/2.png" alt="Wearing sunglasses at dinner"><figcaption>Too cool for noodles 😎</figcaption></figure>
+    <figure><img src="images/5.png" alt="With friends"><figcaption>Her people 💕</figcaption></figure>
+  </div>
+</section>
+
+<section class="athena">
+  <h2>Words from the goddess of wisdom 🦉</h2>
+  <div id="wish">Tap the button for a birthday prophecy.</div>
+  <button class="btn" id="wishBtn" style="margin-top:0">Consult the oracle ✨</button>
+</section>
+
+<section>
+  <div class="letter" id="letter">
+    <h2 style="font-size:2.4rem;font-style:italic;color:var(--pink)">A little letter 💌</h2>
+    <button class="btn" id="open" style="color:var(--night)">Open it</button>
+    <div class="body">
+      <p>Dear <span class="name">Shivani</span>,</p>
+      <p>Twenty! A whole new decade, and honestly I’m not surprised you’re entering it like the main character. You’ve been one the entire time.</p>
+      <p>Thank you for being the kind of friend who makes life lighter. For the laughs, the random chats, the food adventures, and for being there without being asked. You’re thoughtful, you’re fun, and you’re stronger than you give yourself credit for.</p>
+      <p>I hope this year is full of good music, great food, soft pink moments, and every dream you’ve been quietly planning. Whatever your next saga is, I’m cheering the loudest from the front row.</p>
+      <p>Happy birthday. Now go be legendary.</p>
+      <p class="sig">With so much love, <br>your friend 🌸</p>
+    </div>
+  </div>
+</section>
+
+<footer>Made with love, for a girl who deserves the whole world 💖</footer>
+<canvas id="c"></canvas>
+
+<script>
+// Change her name here once:
+const NAME = "Shivani";
+document.querySelectorAll('.name').forEach(e=>e.textContent=NAME);
+
+// stars
+const st=document.getElementById('stars');
+for(let i=0;i<70;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';st.appendChild(s)}
+
+// petals
+const em=['🌸','💖','✨','🌷','🦋'];
+function petal(){const p=document.createElement('span');p.className='petal';p.textContent=em[Math.floor(Math.random()*em.length)];
+  p.style.left=Math.random()*100+'vw';p.style.fontSize=(14+Math.random()*16)+'px';p.style.animationDuration=(6+Math.random()*6)+'s';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),12500)}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches) setInterval(petal,1400);
+
+// oracle
+const wishes=["A year of good news is heading your way.","Someone will make you laugh until you can’t breathe. Often.","Your next big plan works out better than you imagined.","You will eat something delicious and it will change your week.","This is the year you trust yourself completely.","The universe is saving something wonderful for you.","You are not just a hero in the story, you wrote it.","Twenty looks incredible on you."];
+const w=document.getElementById('wish');let last=-1;
+document.getElementById('wishBtn').onclick=()=>{let n;do{n=Math.floor(Math.random()*wishes.length)}while(n===last);last=n;
+  w.style.opacity=0;setTimeout(()=>{w.textContent=wishes[n];w.style.opacity=1},250);confetti(60)};
+
+// letter
+document.getElementById('open').onclick=function(){document.getElementById('letter').classList.add('open');this.style.display='none';confetti(160)};
+
+// confetti
+const cv=document.getElementById('c'),cx=cv.getContext('2d');let parts=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function confetti(n){const cols=['#e8498a','#f7c6d9','#e8b84a','#cdb8f0','#5cc8c0'];
+  for(let i=0;i<n;i++)parts.push({x:innerWidth/2,y:innerHeight*.6,vx:(Math.random()-.5)*16,vy:-Math.random()*16-4,r:Math.random()*6+3,c:cols[i%5],a:Math.random()*6});
+  if(!run){run=true;loop()}}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);
+  parts.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;cx.fillStyle=p.c;cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()});
+  parts=parts.filter(p=>p.y<cv.height+20);
+  if(parts.length)requestAnimationFrame(loop);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}}
+window.addEventListener('load',()=>setTimeout(()=>confetti(120),900));
+</script>
+</body>
+</html>
